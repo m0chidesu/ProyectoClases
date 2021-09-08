@@ -1,31 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-
+//se importa la clase del servicio 
+import {ProductosServiceService} from './productos-service.service';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.page.html',
   styleUrls: ['./productos.page.scss'],
 })
 export class ProductosPage implements OnInit {
+  private productos = []
 
-  private productos = [{
-    id : '1',
-    titulo : 'Cazuela',
-    imagenURL : 'https://www.gourmet.cl/wp-content/uploads/2011/03/cazuela_de_vacuno.jpg',
-    comentarios : ['Rica cazuela', 'Para el frio santiaguino XDDD']
-
-  },
-  {
-    id : '2',
-    titulo : 'Lomo a lo pobre',
-    imagenURL : 'https://comidasperuanas.net/wp-content/uploads/2019/09/Lomo-a-lo-pobre.jpg',
-    comentarios : ['Sabroso', 'Y barato xDDDDDDDDD']
-
-
-  }
-]
-  constructor() { }
+  //el constructor utiliza el servicio y ahora este servicio es parte del HTML
+  constructor(private servicioProductos : ProductosServiceService) { }
 
   ngOnInit() {
+    this.productos = this.servicioProductos.getProductos();
   }
 
 }

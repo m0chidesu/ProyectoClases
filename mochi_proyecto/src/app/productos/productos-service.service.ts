@@ -31,9 +31,11 @@ export class ProductosServiceService {
   /*Metodo Get*/
   getProductosById(productoID : string){
     //Se busca un elemento por ID y se retorna un objetoñ
-    this.productos.find( serv => {
+    return{
+    ...this.productos.find( serv => {
       return serv.id === productoID
     } )
+    }
   }
   /*Metodo Get*/
   addProductos(tit: string, imgURL : string){

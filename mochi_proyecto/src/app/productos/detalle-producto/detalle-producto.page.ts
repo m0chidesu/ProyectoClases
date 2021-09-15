@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosServiceService } from '../productos-service.service';
+import { Producto } from './producto.model';
 @Component({
   selector: 'app-detalle-producto',
   templateUrl: './detalle-producto.page.html',
@@ -8,10 +9,10 @@ import { ProductosServiceService } from '../productos-service.service';
 })
 export class DetalleProductoPage implements OnInit {
 
-  datos = {}
+  datos : Producto
 
   //se crea una variable para poder capturar la URL activa
-  constructor(private activatedRoute : ActivatedRoute, private productosServicio : ProductosServiceService) { }
+  constructor(private activatedRoute : ActivatedRoute, private productosServicio : ProductosServiceService, private Route : Router) { }
 
   ngOnInit() {
 
@@ -30,7 +31,13 @@ export class DetalleProductoPage implements OnInit {
 
   }
 
-  
+  //agregamos el método de eliminar
+  eliminar(){
+    console.log("eliminando")
+    this.productosServicio.deleteProductos(this.datos.id)
+    //redireccionar a la página de productos
+    this.Route.navigate(['/productos']);
+  }
   
 
 }

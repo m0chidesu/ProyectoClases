@@ -17,7 +17,7 @@ export class ProductosServiceService {
     id : '2',
     titulo : 'Lomo a lo pobre',
     imagenURL : 'https://comidasperuanas.net/wp-content/uploads/2019/09/Lomo-a-lo-pobre.jpg',
-    comentarios : ['Sabroso', 'Y barato xDDDDDDDDD']
+    comentarios : []
   }
 ]
 

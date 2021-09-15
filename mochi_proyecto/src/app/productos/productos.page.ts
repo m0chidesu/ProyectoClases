@@ -13,7 +13,13 @@ export class ProductosPage implements OnInit {
   constructor(private servicioProductos : ProductosServiceService) { }
 
   ngOnInit() {
+    //recuperar todos los productos
     this.productos = this.servicioProductos.getProductos();
+  }
+
+  ionViewWillEnter(){
+    this.productos = this.servicioProductos.getProductos();
+
   }
 
 }

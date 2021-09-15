@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color ="caution">
+  <ion-toolbar color ="primary">
     
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -8,7 +8,7 @@
 
 
     <ion-buttons slot="end">
-      <ion-button click="eliminar()">
+      <ion-button (click)="eliminar()">
         <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -36,11 +36,20 @@
   <!--Comentarios-->
     <ion-row>
       <ion-col>
-       <ion-list>
+
+       <ion-list *ngIf="datos.comentarios && datos.comentarios.length > 0; else sinComentarios">
          <ion-item *ngFor="let com of datos.comentarios">
-          {{datos.comentarios}}
+          {{com}}
          </ion-item>
        </ion-list>
+       
+       <!--NgTemplate: segmento de codigo que aparece bajo una condicion-->
+       <ng-template #sinComentarios>
+         <ion-text>
+          <p class="ion-text-center">Sin comentacios</p>
+         </ion-text>
+       </ng-template>
+
       </ion-col>
     </ion-row>
   </ion-grid>

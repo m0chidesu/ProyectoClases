@@ -38,7 +38,7 @@ export class ProductosServiceService {
     }
   }
   /*Metodo Get*/
-  addProductos(tit: string, imgURL : string){
+  addProductos(tit: string, imgURL : string, comentatios:string[]){
     //agregamos un producto nuevo en la lista 
     //el ID corresponde al ultimo elemento registrado
     this.productos.push(

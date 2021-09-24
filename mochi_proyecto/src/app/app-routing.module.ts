@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'productos', //redireccion a la página principal 
+    redirectTo: 'login', //redireccion a la página principal 
     pathMatch: 'full'
   },
   {
@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'agregar-producto',
     loadChildren: () => import('./productos/agregar-producto/agregar-producto.module').then(m => m.AgregarProductoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
 
 ];

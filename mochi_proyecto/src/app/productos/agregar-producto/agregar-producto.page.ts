@@ -14,9 +14,18 @@ export class AgregarProductoPage implements OnInit {
   ngOnInit() {
   }
 
+
   //agregar producto
   agregarProducto(titulo,url,comentario){
-    this.productoServicios.addProductos(titulo.value,url.value,comentario.value);
+
+    if(comentario.value !== ""){
+      var lista = []
+    lista.push(comentario.value)
+    }else{
+      lista = null;
+    }
+
+    this.productoServicios.addProductos(titulo.value,url.value,lista);
     this.router.navigate(['/productos'])
   }
 

@@ -16,9 +16,9 @@
     <ion-col>
       <ion-card>
         <ion-card-content>
-          <ion-input type="text" placeholder="Ingrese el Titulo" ></ion-input>
-          <ion-input type="text" placeholder="Ingrese la URL" ></ion-input>
-          <ion-input type="text" placeholder="Ingrese un comentario" ></ion-input>
+          <ion-input type="text" placeholder="Ingrese el Titulo" #titulo ></ion-input>
+          <ion-input type="text" placeholder="Ingrese la URL" #url></ion-input>
+          <ion-input type="text" placeholder="Ingrese un comentario" #comentario></ion-input>
           <ion-button color="danger" (click)="agregarProducto(titulo,url,comentario)">Agregar</ion-button>
         </ion-card-content>
       </ion-card>
